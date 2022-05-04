@@ -1,5 +1,6 @@
 package com.bootcampjava.bootcamp.controllers;
 
+import com.bootcampjava.bootcamp.dao.UserDao;
 import com.bootcampjava.bootcamp.models.User;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -9,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RestController
-public class UsuarioController {
+public class UsuarioController implements UserDao {
 
     // Request Mapping con la ruta test
     @RequestMapping(value = "user/{id}")
@@ -97,4 +98,8 @@ public class UsuarioController {
     }
 
 
+    @Override
+    public List<User> getAllUsers() {
+        return null;
+    }
 }
