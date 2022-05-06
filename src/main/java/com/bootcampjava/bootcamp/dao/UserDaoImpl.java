@@ -1,7 +1,6 @@
 package com.bootcampjava.bootcamp.dao;
 
-import com.bootcampjava.bootcamp.dao.UserDao;
-import com.bootcampjava.bootcamp.models.User;
+import com.bootcampjava.bootcamp.models.Usuario;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -14,11 +13,15 @@ import java.util.List;
 @Transactional // Consultas de Transacción SQL(en fragmentos)
 public class UserDaoImpl implements UserDao {
 
-    @PersistenceContext // Contexto de Persistencia en la BBDD
-    private EntityManager entityManager; // Nos ayudara hacer la conexión con la BBDD
+    // Contexto de Persistencia en la BBDD
+    @PersistenceContext
+    // Nos ayudará hacer la conexión con la BBDD
+    EntityManager entityManager;
 
     @Override
-    public List<User> getAllUsers() {
-        return null;
+    @Transactional
+    public List<Usuario> getUsuarios() {
+        String query = "FROM User";
+        return entityManager.createQuery(query).getResultList();
     }
 }

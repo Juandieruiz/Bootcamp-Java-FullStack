@@ -1,7 +1,7 @@
 package com.bootcampjava.bootcamp.controllers;
 
 import com.bootcampjava.bootcamp.dao.UserDao;
-import com.bootcampjava.bootcamp.models.User;
+import com.bootcampjava.bootcamp.models.Usuario;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -10,12 +10,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RestController
-public class UsuarioController implements UserDao {
+public class UsuarioController  {
 
     // Request Mapping con la ruta test
     @RequestMapping(value = "user/{id}")
-    public User getUser(@PathVariable Long id) {
-        User user = new User();
+    public Usuario getUser(@PathVariable Long id) {
+        Usuario user = new Usuario();
         user.setId(213L);
         user.setName("Juan");
         user.setLastname("Perez");
@@ -27,9 +27,9 @@ public class UsuarioController implements UserDao {
     }
 
     @RequestMapping(value = "users")
-    public List<User> getUsers() {
-        List<User> userList = new ArrayList<>();
-        User user = new User();
+    public List<Usuario> getUsers() {
+        List<Usuario> userList = new ArrayList<>();
+        Usuario user = new Usuario();
         user.setId(0L);
         user.setName("Juan");
         user.setLastname("Gomez");
@@ -37,7 +37,7 @@ public class UsuarioController implements UserDao {
         user.setPassword("a123");
         user.setPhone("6729292");
 
-        User user1 = new User();
+        Usuario user1 = new Usuario();
         user1.setId(1L);
         user1.setName("Jhon");
         user1.setLastname("Stevens");
@@ -45,7 +45,7 @@ public class UsuarioController implements UserDao {
         user1.setPassword("e123");
         user1.setPhone("123123123");
 
-        User user2 = new User();
+        Usuario user2 = new Usuario();
         user2.setId(2L);
         user2.setName("María");
         user2.setLastname("Gonzalez");
@@ -62,8 +62,8 @@ public class UsuarioController implements UserDao {
     }
 
     @RequestMapping(value = "user1")
-    public User editUser() {
-        User user1 = new User();
+    public Usuario editUser() {
+        Usuario user1 = new Usuario();
         user1.setName("Juan");
         user1.setLastname("Perez");
         user1.setEmail("juan@juan.com");
@@ -74,8 +74,8 @@ public class UsuarioController implements UserDao {
     }
 
     @RequestMapping(value = "user11")
-    public User deleteUser() {
-        User user1 = new User();
+    public Usuario deleteUser() {
+        Usuario user1 = new Usuario();
         user1.setName("Juan");
         user1.setLastname("Perez");
         user1.setEmail("juan@juan.com");
@@ -86,8 +86,8 @@ public class UsuarioController implements UserDao {
     }
 
     @RequestMapping(value = "user111")
-    public User searchUser() {
-        User user1 = new User();
+    public Usuario searchUser() {
+        Usuario user1 = new Usuario();
         user1.setName("Juan");
         user1.setLastname("Perez");
         user1.setEmail("juan@juan.com");
@@ -97,9 +97,4 @@ public class UsuarioController implements UserDao {
         return user1;
     }
 
-
-    @Override
-    public List<User> getAllUsers() {
-        return null;
-    }
 }

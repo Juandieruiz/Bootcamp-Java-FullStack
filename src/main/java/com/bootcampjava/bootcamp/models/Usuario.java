@@ -1,6 +1,11 @@
 package com.bootcampjava.bootcamp.models;
 
-public class User {
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "users")
+public class Usuario {
 
     private Long id;
     private String name;

@@ -1,6 +1,6 @@
 package com.bootcampjava.bootcamp.dao;
 
-import com.bootcampjava.bootcamp.models.User;
+import com.bootcampjava.bootcamp.models.Usuario;
 
 import java.util.List;
 
@@ -9,6 +9,6 @@ import java.util.List;
 // Si una clase implementa esta interface, los metodos que hay aquí son obligatorios
 public interface UserDao {
 
-    List<User> getAllUsers();
+    List<Usuario> getUsuarios();
 
 }
